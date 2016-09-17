@@ -1,0 +1,108 @@
+<html>
+  <body>
+    <script>
+    //game
+    function game() {
+      alert("You're wandering around a part of town you've never been in before when you suddenly notice a candy store across the street. You decide to go in.")
+    alert("You've always loved candy, so when you notice that there are free samples, you run straight over to that section.");
+    var color = prompt("What color candy do you want to eat... red, blue, or yellow?");
+    if (color == "red") {
+      alert("It turns out that you're allergic to whatever the coloring in the red candy is. You die on the spot.");
+      alert("The End.")
+    }
+    else if (color == "blue") {
+      alert("Good choice. The candy is blue raspberry flavored, which is your favorite.");
+      blue();
+    }
+    else if (color == "yellow") {
+      alert("The candy tastes awful. You can't tell whether it's really old, just a terrible flavor, or if it's even candy at all.");
+      yellow();
+        }
+    else {
+      NaO1();
+    }
+  }
+
+    //functions
+      //blue candies
+    function blue() {
+      var blueNext = prompt("Do you buy some of the blue candies or do you continue walking around the store?");
+      if (blueNext == "buy some of the blue candies") {
+        bags();
+     } else if ("continue walking around the store") {
+       shop();
+    } else {
+      alert("That wasn't an option.");
+      blue();
+    }
+  }
+        //buy blue candies
+  function bags() {
+    var num = prompt("How many bags of candy do you buy?");
+    alert("You decide to buy " + num + " bags of candy. You leave the store after that.");
+    alert("The End.");
+  }
+          //browse shop
+  function shop() {
+    alert("You walk around a little more, but you don't see anything that looks that great. Suddenly you realize that Mother's Day is next weekend, and you should probably buy something for your Mom even thought you haven't seen her in a while.");
+    var mom = prompt("You see a box of assorted chocolates. Do you buy them for her?");
+    if (mom == "yes") {
+    alert("You buy your mom the chocolates, then, feeling like a very organized person, leave the store.");
+    alert("The End");
+  } else if ("no") {
+    alert("You don't know exactly why, but you decide not to buy your mom any chocolates. You leave the store emptyhanded.")
+    alert("The End.");
+  } else {
+    alert("That wasn't an option.")
+    shop();
+  }
+  }
+
+    //yellow candies
+    function yellow() {
+      var yellowNext = prompt("What do you do now... spit it out or choke it down?");
+      if (yellowNext == "choke it down") {
+        alert("You eat the candy, but you instantly regret it. You feel nauseous and the candy's awful taste lingers in your mouth.");
+        alert("You run outside and throw up all over the sidewalk. The End.")
+      }
+      else if (yellowNext == "spit it out") {
+        spit();
+      }
+      else {
+        alert("That wasn't an option.");
+        yellow();
+      }
+  }
+      //spit out bad candies
+  function spit() {
+    var spit = prompt("Where do you spit it out... into your hand or onto the floor?")
+    if (spit == "into your hand"){
+      alert("You look down at the disgusting thing in your hand. Even though you know you should tell the owner of the shop about what happened, you decide to just get out of there. You exit the store, throw the candy out in the nearest trash can, and continue wandering around.")
+      alert("The End.")
+    } else if (spit == "onto the floor") {
+      alert("You breathe a sigh of relief upon seeing the candy on the floor and out of your mouth.");
+      alert("Suddenly you hear a loud, deep voice yelling: 'What are you doing?! This is a candy shop, not a dump!' You look up to see that it is the man behind the counter.");
+      alert("'I'm going to have to escort you out of here before you disrespect this place anymore!' The man says, his face growing red.");
+      alert("You open your mouth to say something, but before you can, you are pushed out the doorway and onto the sidewalk. Embarrased, you walk down the street without looking back.");
+      alert("The End.")
+    }
+    else {
+      alert("That wasn't an option.");
+      spit();
+    }
+}
+
+    //else
+    function NaO1() {
+      alert("That wasn't an option.");
+      var wrong = prompt("Would you like to replay the game?");
+      if (wrong == "yes") {
+        game();
+      }
+    }
+
+  game();
+
+    </script>
+  </body>
+</html>
