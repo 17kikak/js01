@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+    
+      frontYard();
+
+      function frontYard() {
+        alert("You are standing on a concrete path in the front yard of a house. There are some bushes and flowers here, as well as a small tree with lawn gnomes around the base of it. If you walk up the path to the north, you reach the front door.");
+        alert("The goal of this game is to reach the back yard.");
+        var direction1 = prompt("Which direction would you like to go in?");
+        if (direction1 == "north") {
+          livingRoom();
+        } else {
+          alert("That wasn't an option.");
+          frontYard();
+        }
+      }
+
+      function livingRoom() {
+        alert("You are in the living room. Here there are some large bookshelves, as well as a sitting area with a couch, a chair and a television set. To the west there is a door that leads to the master bedroom. To the north there is a opening that leads to the kitchen.");
+        var direction2 = prompt("Which direction would you like to go in?");
+        if (direction2 == "west") {
+          masterBedroom();
+        } else if (direction2 == "north") {
+          kitchen();
+        } else {
+          alert("That wasn't an option.");
+          livingRoom();
+        }
+      }
+
+      function masterBedroom() {
+        alert("You are in the master bedroom. Here there is a king size bed, two bedside tables, and some paintings. To the southwest there is a door that leads to the master bathroom. You can enter the living room by going east.");
+        var direction3 = prompt("Which direction would you like to go in?");
+        if (direction3 == "southwest"){
+          masterBathroom();
+        } else if (direction3 == "east"){
+          livingRoom();
+        } else {
+          alert("That wasn't an option.");
+          masterBedroom();
+        }
+      }
+
+      function kitchen() {
+        alert("You are in the kitchen/dining room. Here there is a kitchen table with space for six people. There is also an area to cook in, which has an oven, a fridge, a dishwasher, a microwave and some cabinets. There is a hallway area to the west, and you can enter the living room by going south.");
+        var direction4 = prompt("Which direction would you like to go in?");
+        if (direction4 == "west"){
+          hallway();
+        } else if (direction4 == "south") {
+          livingRoom();
+        } else {
+          kitchen();
+        }
+      }
+
+      function masterBathroom() {
+        alert("You are in the master bathroom. It has all the things a bathroom typically has, like a sink, a toilet, and a reasonably sized bath. You can enter the master bedroom if you go northeast.");
+        var direction5 = prompt("Which direction would you like to go in?");
+        if (direction5 == "northeast") {
+          masterBedroom();
+        } else {
+          alert("That wasn't a option.");
+          masterBathroom();
+        }
+      }
+
+      function hallway() {
+        alert("You are in the hallway. There isn't much here except for some toy trucks and some children's books that are scattered around on the floor. To the west there is a guest bedroom and to the south there is a guest bathroom. You can enter the kitcen by going east, and to the north there is a screen door that opens up to the backyard.");
+        var direction6 = prompt("Which direction would you like to go in?");
+        if (direction6 == "west") {
+          guestBedroom();
+        } else if (direction6 == "south") {
+          guestBathroom();
+        } else if (direction6 == "east") {
+          kitchen();
+        } else if (direction6 == "north") {
+          backyard();
+        } else {
+          alert("That wasn't an option.");
+          hallway();
+        }
+      }
+
+      function guestBedroom() {
+        alert("You are in the guest bedroom. However, it seems that the room belongs two young children because there is a crib and a small bed. There are a few nightlights spread evenly around the room, and there is a small bookshelf which holds some children's books and some toys. There is also a dollhouse on the floor. If you go east, you can enter the hallway.");
+        var direction7 = prompt("Which direction would you like to go in?");
+        if (direction7 == "east"){
+          hallway();
+        } else {
+          alert("That wasn't an option.");
+          guestBedroom();
+        }
+      }
+
+      function guestBathroom() {
+        alert("You are in the guest bathroom. It has all the things that a bathroom typically has, including a sink, a toilet, a small shower, and a cabinet. However, there is also a plastic stool under the sink and some baby wipes on top of the cabinet. If you go north, you can enter the hallway.");
+        var direction8 = prompt("Which direction would you like to go in?");
+        if (direction8 == "north"){
+          hallway();
+        } else {
+          alert("That wasn't an option.");
+          guestBathroom();
+        }
+      }
+
+      function backyard() {
+        alert("You have reached the backyard! You win!");
+      }
+
+    </script>
+  </body>
+</html>
