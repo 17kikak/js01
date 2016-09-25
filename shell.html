@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <head>
+      <title>Shell Game</title>
+    </head>
+    <script>
+    var roundsPlayed = 0;
+    var roundsWon = 0;
+    var roundsNum = prompt("How many rounds would you like to play?");
+    roundsNum = parseInt(roundsNum);
+    function generateRandomShell() {
+      // return a random number between 0 and 2
+     return Math.floor(3 * Math.random() + 1);
+    }
+    function shellGame() {
+      // 1. ask player which shell
+      var shellChoice = prompt("What shell is it in: 1, 2, or 3?");
+      shellChoice = parseInt(shellChoice);
+
+      // 2. generate random shell
+      var randomShell = generateRandomShell();
+      // 3. test whether choice equals random shell
+      // 4. print relevant message
+      if (randomShell === shellChoice) {
+        alert("you win!");
+        roundsWon += 1;
+        alert("Rounds Won: " + roundsWon);
+      } else {
+        alert("you lose!");
+        alert("Rounds Won: " + roundsWon);
+      }
+    }
+    while (roundsPlayed < roundsNum) {
+      shellGame();
+      roundsPlayed += 1;
+    }
+    </script>
+  </body>
+</html>
