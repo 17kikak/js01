@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock-Paper-Scissors</title>
+  </head>
+  <body>
+    <script>
+    var roundsPlayed = 0;
+    var roundsNum = prompt("Both players: How many rounds do you want to play?");
+    roundsNum = parseInt(roundsNum);
+    var OneChoice = prompt("Player 1: Do you want to choose rock, paper, or scissors?");
+    var TwoChoice = prompt("Player 2: Do you want to choose rock, paper, or scissors?");
+    function game() {
+      if (OneChoice == "rock") {
+        if (TwoChoice == "rock") {
+          alert("You tied!");
+        } else if (TwoChoice == "paper") {
+          alert("Player 2 won!");
+        }
+        else if (TwoChoice == "scissors"){
+          alert("Player 1 won!");
+        }
+        else {
+          alert("Oops, someone put in something that wasn't an option. Try again.");
+        }
+    } else if (OneChoice == "paper") {
+        if (TwoChoice == "paper") {
+          alert("You tied!");
+        } else if (TwoChoice == "scissors") {
+          alert("Player 2 won!");
+        }
+        else if (TwoChoice == "rock"){
+          alert("Player 1 won!");
+        }
+        else {
+          alert("Oops, someone put in something that wasn't an option. Try again.");
+        }
+    } else if (OneChoice == "scissors") {
+        if (TwoChoice == "scissors") {
+            alert("You tied!");
+        } else if (TwoChoice == "rock") {
+            alert("Player 2 won!");
+        } else if (TwoChoice == "paper"){
+            alert("Player 1 won!");
+        } else {
+            alert("Oops, someone put in something that wasn't an option. Try again.");
+          }
+  }
+}
+    while (roundsPlayed < roundsNum) {
+      game();
+      roundsPlayed += 1;
+    }
+    </script>
+  </body>
+</html>
