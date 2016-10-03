@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mad Libs</title>
+    <style>
+      input {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function madlib() {
+        var one = document.getElementById("one");
+        var two = document.getElementById("two");
+        var three = document.getElementById("three");
+        var four = document.getElementById("four");
+        var five = document.getElementById("five");
+        var six = document.getElementById("six");
+        var seven = document.getElementById("seven");
+        var eight = document.getElementById("eight");
+        var nine = document.getElementById("nine");
+        var ten = document.getElementById("ten");
+        var eleven = document.getElementById("eleven");
+        var twelve = document.getElementById("twelve");
+        var thirteen = document.getElementById("thirteen");
+        var madlibP = document.getElementById("madlibP");
+        madlibP.textContent = "You wake up and " + one.value + " out of bed. Still " + two.value +", you walk over to the kitchen, open the " + three.value + ", and pour some " + four.value + " juice into your favorite mug. As you " + five.value + " it, you stare " + six.value + " out the window. It’s still " + seven.value + ", but it seems like it’s going to be a pretty " + eight.value + " " +  nine.value + ". Suddenly you remember — its your birthday! On cue, your phone " + ten.value + " with a " + eleven.value + " from your best friend " + twelve.value + " you a " + thirteen.value + " birthday."
+      }
+    </script>
+    <input type="text" placeholder="verb" id="one"></input>
+    <input type="text" placeholder="verb ending with ing" id="two"></input>
+    <input type="text" placeholder="noun" id="three"></input>
+    <input type="text" placeholder="noun" id ="four"></input>
+    <input type="text" placeholder="verb" id="five"></input>
+    <input type="text" placeholder="adverb" id="six"></input>
+    <input type="text" placeholder="adjective" id ="seven"></input>
+    <input type="text" placeholder="adjective" id="eight"></input>
+    <input type="text" placeholder="noun" id="nine"></input>
+    <input type="text" placeholder="verb ending with s" id="ten"></input>
+    <input type="text" placeholder="noun" id="eleven"></input>
+    <input type="text" placeholder="verb ending with ing" id="twelve"></input>
+    <input type="text" placeholder="adjective" id="thirteen"></input>
+    <button onclick="madlib();">Create Mad Lib!</button>
+    <p id="madlibP"></p>
+  </body>
+</html>
