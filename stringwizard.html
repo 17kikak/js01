@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>STRING WIZARD</title>
+    <meta charset="utf-8">
+    <script>
+      var clicked = 0;
+
+      function double() {
+        clicked++;
+
+        var inputBox = document.getElementById("doubleBox");
+        var text = inputBox.value;
+
+        text = text + " " + text;
+
+        inputBox.value = text;
+
+        var countP = document.getElementById("count");
+
+        countP.textContent = "You doubled the string " + clicked + " time(s)";
+      }
+
+      function upper() {
+
+        var inputBox = document.getElementById("upperBox");
+        var text2 = inputBox.value;
+
+        text2 = text2.toUpperCase();
+
+        inputBox.value = text2;
+
+        var countP2 = document.getElementById("count2");
+
+        countP2.textContent = "You uppercased the string!";
+      }
+
+      function lower() {
+
+        var inputBox = document.getElementById("lowerBox");
+        var text3 = inputBox.value;
+
+        text3 = text3.toLowerCase();
+
+        inputBox.value = text3;
+
+        var countP3 = document.getElementById("count3");
+
+        countP3.textContent = "You lowercased the string!";
+      }
+
+      function rvrs() {
+
+        var inputBox = document.getElementById("reverseBox");
+        var text4 = inputBox.value;
+
+        function reverseString(string) {
+          return string.split('').reverse().join('');
+        }
+
+        text4 = reverseString(text4);
+
+        inputBox.value = text4;
+
+        var countP4 = document.getElementById("count4");
+
+        countP4.textContent = "You reversed the string!";
+      }
+
+    </script>
+  </head>
+  <body>
+    <input type="text" id="doubleBox"></input>
+    <button id="doubleButton" onclick="double();">Double</button>
+    <p id="count"></p>
+
+    <input type="text" id="upperBox"></input>
+    <button id="upperButton" onclick="upper();">Uppercase</button>
+    <p id="count2"></p>
+
+    <input type="text" id="lowerBox"></input>
+    <button id="lowerButton" onclick="lower();">Lowercase</button>
+    <p id="count3"></p>
+
+    <input type="text" id="reverseBox"></input>
+    <button id="reverseButton" onclick="rvrs();">Reverse</button>
+    <p id="count4"></p>
+  </body>
+</html>
