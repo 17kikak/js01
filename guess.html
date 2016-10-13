@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    function game() {
+      var range = prompt("What range do you want to pick from? 1 through....");
+      range = parseInt(range);
+      var choice = prompt("What is your guess?");
+      choice = parseInt(choice);
+      function randomNumber() {
+        return Math.floor(range * Math.random() + 1);
+      }
+      randomNumber = randomNumber();
+      if (randomNumber == choice) {
+        alert("You win!");
+      } else {
+        alert("You lose.")
+      }
+      retryGame();
+    }
+
+    function retryGame() {
+      var retry = prompt("Would you like to try again? If so, type 'yes'. If not, type 'I give up'.");
+      if (retry == "yes") {
+        game();
+      } else if (retry == "I give up") {
+      alert("Thanks for trying!");
+      }
+    }
+
+    game();
+  </script>
+  </body>
+</html>
