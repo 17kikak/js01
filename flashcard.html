@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Helvetica;
+        text-align: center;
+        background-color: #f9f9f9;
+      }
+      #card {
+       width: 500px;
+       padding: 110px 0;
+       margin: 50px auto;
+       box-shadow: 0 2px 5px 0 lightgrey;
+       border-radius: 5px;
+       font-size: 22px;
+       color: grey;
+       background-color: white;
+       font-family: sans-serif;
+     }
+    </style>
+  </head>
+  <body>
+    <div id="card"></div>
+    <input type="text" id="answer"/>
+    <button onclick="study();">Answer</button>
+
+    <script>
+      var currentCard = -1;
+      var questions = ["125 x 5", "74 + 83", "993/3"];
+      var answers = ["625", "157", "331"];
+      var correct = 0;
+
+      function study() {
+        var realAnswer = answers[currentCard];
+        var answer = document.getElementById("answer");
+        var answer = answer.value;
+        if (answer == realAnswer) {
+          correct = correct + 1;
+        }
+
+        nextCard();
+      }
+      function nextCard() {
+        if (currentCard < questions.length - 1) {
+          currentCard = currentCard + 1;
+          var card = document.getElementById("card");
+          card.textContent = questions[currentCard];
+          var answer = document.getElementById("answer");
+          answer.value = "";
+        } else {
+          alert("You got " + correct + " right!");
+        }
+      }
+      nextCard();
+    </script>
+  </body>
+</html>
