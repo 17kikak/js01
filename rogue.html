@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Roguelike</title>
+    <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+  </head>
+  <body>
+    <style>
+    </style>
+    <script>
+    function start() {
+      setTimeout(end, 15000);
+      Crafty.init(600, 400);
+      Crafty.background('lightblue');
+      player = Crafty.e("Player, 2D, DOM, Image, Fourway, Collision");
+      player.attr({x: 25, y: 25, w: 128, h: 128});
+      player.image('http://www.i2clipart.com/cliparts/e/0/b/5/clipart-clown-fish-e0b5.png');
+      player.fourway();
+      player.onHit("Solid", hit);
+
+      var columns = 60;
+        var rows = 40;
+        var tileWidth = 10;
+        var tileHeight = 10;
+        var column;
+        var row;
+        for (column = 0; column < columns; column++) {
+          for (row = 0; row < rows; row++) {
+            var tileX = column * tileWidth;
+            var tileY = row * tileHeight;
+            if (Math.random() < 0.05) {
+              var food = Crafty.e("2D, DOM, Color, Solid");
+              food.attr({x: tileX, y: tileY, w: tileWidth, h: tileHeight});
+              food.color("#83684d");
+            }
+          }
+        }
+    }
+    var collected = 0;
+    function hit(args) {
+      var other = args[0].obj
+      other.destroy();
+      collected = collected + 1;
+      var countP = document.getElementById("collected");
+      countP.textContent = "You have eaten " + collected + " pieces of food!";
+    }
+    function end() {
+      alert("Time's up!");
+    }
+    window.onload = start;
+    </script>
+    <p id="collected"></p>
+  </body>
+</html>
